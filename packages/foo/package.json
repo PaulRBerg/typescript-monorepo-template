@@ -1,0 +1,28 @@
+{
+  "name": "@project/foo",
+  "version": "1.0.0",
+  "author": {
+    "name": "Paul Razvan Berg",
+    "url": "https://paulrberg.com"
+  },
+  "bugs": {
+    "url": "https://github.com/paulrberg/typescript-monorepo-template/issues"
+  },
+  "devDependencies": {
+    "shx": "^0.3.2",
+    "typescript": "^3.9.3"
+  },
+  "homepage": "https://github.com/paulrberg/typescript-monorepo-template/tree/develop/packages/dev-constants#readme",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/paulrberg/typescript-monorepo-template.git",
+    "directory": "packages/foo"
+  },
+  "scripts": {
+    "build": "yarn run clean && tsc --project ./tsconfig.build.json",
+    "clean": "shx rm -rf ./dist ./tsconfig.tsbuildinfo ./tsconfig.build.tsbuildinfo",
+    "watch": "yarn run clean && tsc --project ./tsconfig.build.json --watch"
+  },
+  "types": "./dist/index.d.ts"
+}

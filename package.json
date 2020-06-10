@@ -1,0 +1,32 @@
+{
+  "name": "@project/monorepo",
+  "description": "Dummy monorepo set up with Typescript and Yarn Workspaces",
+  "version": "1.0.0",
+  "author": {
+    "name": "Paul Razvan Berg",
+    "url": "https://paulrberg.com"
+  },
+  "devDependencies": {
+    "@types/eslint": "6.8.1",
+    "@types/node": "^14.0.9",
+    "@typescript-eslint/eslint-plugin": "^2.34.0",
+    "@typescript-eslint/parser": "^2.34.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.11.0",
+    "ethers": "^4.0.47",
+    "prettier": "^2.0.5",
+    "typescript": "^3.9.3"
+  },
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "lint": "eslint --config ./.eslintrc.js --ignore-path ./.eslintignore --ext .js,.ts .",
+    "prettier": "prettier --config .prettierrc --write '**/*.{js,json,md,ts}'",
+    "prettier:list-different": "prettier --config .prettierrc --list-different '**/*.{js,json,md,ts}'"
+  },
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  }
+}

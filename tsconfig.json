@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./packages",
+    "paths": {
+      "@project/bar": ["./bar/src"],
+      "@project/foo": ["./foo/src"],
+      "@project/*": ["*/src"]
+    }
+  },
+  "extends": "./tsconfig.build.json"
+}

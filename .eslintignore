@@ -1,0 +1,9 @@
+# folders
+build/
+dist/
+lib/
+node_modules/
+packages/**/artifacts/
+packages/**/cache/
+typechain/
+
