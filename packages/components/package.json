@@ -1,0 +1,23 @@
+{
+  "name": "@project/components",
+  "version": "1.0.0",
+  "main": "./src/index",
+  "packageManager": "yarn@3.2.2",
+  "private": true,
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.40.1",
+    "@typescript-eslint/parser": "^5.40.1",
+    "eslint": "^8.25.0",
+    "eslint-config-prettier": "^8.5.0",
+    "prettier": "^2.7.1",
+    "typescript": "4.8.4"
+  },
+  "scripts": {
+    "lint-check": "yarn tsc && eslint .",
+    "lint-fix": "yarn tsc && eslint --fix .",
+    "prettier-check": "yarn prettier --check .",
+    "prettier-fix": "yarn prettier --write .",
+    "style-check": "yarn stylelint \"./src/**/*.{ts,tsx}\"",
+    "style-fix": "yarn stylelint --fix \"./src/**/*.{ts,tsx}\""
+  }
+}

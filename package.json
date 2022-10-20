@@ -1,32 +1,42 @@
 {
-  "name": "@project/monorepo",
-  "description": "Dummy monorepo set up with Typescript and Yarn Workspaces",
+  "name": "@project/typescript-monorepo-template",
+  "description": "A template for creating TypeScript monorepos, with sensible defaults",
   "version": "1.0.0",
-  "author": {
-    "name": "Paul Razvan Berg",
-    "url": "https://paulrberg.com"
-  },
   "devDependencies": {
-    "@types/eslint": "6.8.1",
-    "@types/node": "^14.0.9",
-    "@typescript-eslint/eslint-plugin": "^2.34.0",
-    "@typescript-eslint/parser": "^2.34.0",
-    "eslint": "^6.8.0",
-    "eslint-config-prettier": "^6.11.0",
-    "ethers": "^4.0.47",
-    "prettier": "^2.0.5",
-    "typescript": "^3.9.3"
+    "@commitlint/cli": "^17.1.2",
+    "@commitlint/config-conventional": "^17.1.0",
+    "@trivago/prettier-plugin-sort-imports": "^3.3.1",
+    "@types/node": "^18.11.1",
+    "@typescript-eslint/eslint-plugin": "^5.40.1",
+    "@typescript-eslint/parser": "^5.40.1",
+    "commitizen": "^4.2.5",
+    "cz-conventional-changelog": "^3.3.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "prettier": "^2.7.1"
   },
-  "license": "MIT",
+  "keywords": [
+    "eslint",
+    "javascript",
+    "prettier",
+    "monorepo",
+    "template",
+    "typescript",
+    "yarn"
+  ],
+  "packageManager": "yarn@3.2.2",
   "private": true,
   "scripts": {
-    "lint": "eslint --config ./.eslintrc.js --ignore-path ./.eslintignore --ext .js,.ts .",
-    "prettier": "prettier --config .prettierrc --write '**/*.{js,json,md,ts}'",
-    "prettier:list-different": "prettier --config .prettierrc --list-different '**/*.{js,json,md,ts}'"
+    "g:commit": "cz",
+    "g:lint-check": "yarn workspaces foreach --parallel --topological --verbose run lint-check",
+    "g:lint-fix": "yarn workspaces foreach --parallel --topological --verbose run lint-fix",
+    "g:prettier-check": "yarn prettier --check .",
+    "g:prettier-fix": "yarn prettier --write .",
+    "g:watch": "yarn workspaces foreach --parallel --topological --verbose run watch",
+    "postinstall": "husky install"
   },
-  "workspaces": {
-    "packages": [
-      "packages/*"
-    ]
-  }
+  "types": "./dist/index.d.ts",
+  "workspaces": [
+    "packages/*"
+  ]
 }

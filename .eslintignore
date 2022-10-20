@@ -1,9 +1,14 @@
-# folders
-build/
-dist/
-lib/
-node_modules/
-packages/**/artifacts/
-packages/**/cache/
-typechain/
+# directories
+.yarn/
+**/build
+**/dist
+**/node_modules
 
+# files
+*.env
+*.log
+*.tsbuildinfo
+.pnp.*
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

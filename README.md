@@ -1,3 +1,3 @@
-## typescript-monorepo-template
+# TypeScript Template
 
-Dummy monorepo set up with Typescript and Yarn Workspaces.
+A template for developing TypeScript monorepos, with sensible defaults.
